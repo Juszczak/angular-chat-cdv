@@ -1,12 +1,18 @@
 
-<div class="messages">
-  <message *ngFor="let message of messages"
-           [message]="message">
-  </message>
+<div class="messages-list">
+  
+  <div *ngFor="let messageObject of messages">
+    {{ messageObject }}
+  </div>
+
 </div>
 
 <div class="footer">
   <textarea 
     (keyup.enter)="handleEnter($event)"
   ></textarea>
+  <div>
+    <input
+      (keyup)="handleUsernameChange($event)">
+  </div>
 </div>

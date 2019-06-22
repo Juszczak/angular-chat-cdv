@@ -9,6 +9,8 @@ import { Message } from './message';
 })
 export class ChatComponent implements OnInit {
   public messages: Message[] = [];
+  
+  public authorId: string;
 
   private socket: SocketIOClient.Socket;
   private readonly eventType: string = 'chat message';
@@ -54,5 +56,17 @@ export class ChatComponent implements OnInit {
     };
 
     this.socket.emit(this.eventType, message);
+  }
+
+  public handleUsernameChange($event: KeyboardEvent): void {
+    // this.authorId = ($event.target as HTMLInputElement).value;
+
+    let input: HTMLInputElement;
+    let username: string;
+
+    input = $event.target as HTMLInputElement;
+    username = input.value;
+
+    this.authorId = username;
   }
 }
