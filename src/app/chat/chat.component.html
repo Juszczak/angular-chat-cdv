@@ -1,0 +1,12 @@
+
+<div class="messages">
+  <message *ngFor="let message of messages"
+           [message]="message">
+  </message>
+</div>
+
+<div class="footer">
+  <textarea 
+    (keyup.enter)="handleEnter($event)"
+  ></textarea>
+</div>
