@@ -1,9 +1,12 @@
 
 <div class="messages-list">
   
-  <div *ngFor="let messageObject of messages">
-    {{ messageObject }}
-  </div>
+  <app-message 
+    *ngFor="let messageObject of messages"
+    [messageObject]="messageObject"
+    >
+    {{ messageObject.text }}
+  </app-message>
 
 </div>
 
@@ -12,7 +15,10 @@
     (keyup.enter)="handleEnter($event)"
   ></textarea>
   <div>
+    <span>Username</span>
     <input
-      (keyup)="handleUsernameChange($event)">
+      (keyup)="setName($event.target.value)"
+      placeholder="Type your username here"
+      >
   </div>
 </div>

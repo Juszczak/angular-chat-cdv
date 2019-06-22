@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.author {
+  padding-left: 8px;
+}
+
+.text {
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.2);
+  padding: 4px 8px;
+}
+
+.timestamp {
+  text-align: right;
+}
